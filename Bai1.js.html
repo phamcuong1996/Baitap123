@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 1</title>
+</head>
+<body>
+<script>
+    const students = ["Pham Khien", "Nguyen Nhan", 'Do Thanh Nhan', 'Nguyen Hung', 'Do Manh Hung'];
+
+    function GroupName(arrayName) {
+        const listName = [];
+        const passed = [];
+        for (let i = 0; i < arrayName.length; i++) {
+            const a = arrayName[i].split(' ');
+            listName.push(a[a.length - 1]);
+        }
+        for (let i = 0; i < listName.length; i++) {
+            if (passed.includes(listName[i])) {
+                continue;
+            }
+            passed.push(listName[i]);
+            const childGroupName = [arrayName[i]];
+            for (let j = i + 1; j < listName.length; j++) {
+                if (listName[i] === listName[j]) {
+                    childGroupName.push(arrayName[j])
+                }
+            }
+
+            console.log(listName[i] + ' : ' + childGroupName)
+        }
+    }
+
+    GroupName(students)
+</script>
+
+</body>
+</html>

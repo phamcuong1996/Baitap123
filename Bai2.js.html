@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    students = ["Pham Khien", "Nguyen Nhan", "Hoang Thu Huong", 'Pham Hung', 'Hoang Thi Huong', 'Do Thanh Nhan', 'Nguyen Hung', 'Do Manh Hung'];
+
+    function DuplicateName(arrayName) {
+        let listName = [];
+        for (let i = 0; i < arrayName.length; i++) {
+            const a = arrayName[i].split(' ');
+            listName.push(a[a.length - 1]);
+        }
+        const passed = [];
+        for (let j = 0; j < listName.length; j++) {
+            let sum = 1;
+            for (let e = 0; e < passed.length; e++) {
+                if (listName[j] === passed[e]) return
+            }
+            for (let k = j + 1; k < listName.length; k++) {
+                if (listName[j] === listName[k]) {
+                    sum += 1
+                }
+            }
+            if (sum > 1) {
+                passed.push(listName[j])
+                console.log(listName[j] + " : " + sum)
+            }
+        }
+    }
+    DuplicateName(students);
+</script>
+</body>
+</html>

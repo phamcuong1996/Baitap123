@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 3</title>
+</head>
+<body>
+<script>
+    const numbers = [1, 2, 3, 6, 7, 9, 4, 5, 2, 4, 5, 44, 55, 22, 11, 1]
+
+    function abc() {
+        for (let i = 0; i < numbers.length; i++) {
+            for (let j = i + 1; j < numbers.length; j++) {
+                if (numbers[i] + numbers[j] === 10) {
+                    console.log("Found");
+                    return;
+                }
+            }
+        }
+        console.log('NOT')
+    }
+
+    abc();
+</script>
+</body>
+</html>
